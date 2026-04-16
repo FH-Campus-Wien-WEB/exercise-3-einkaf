@@ -1,77 +1,119 @@
 @import url(base.css);
 
-h1 {
-  font-size: 200%;
-  margin: 8px 0px;
-}
-
-/* Constrain the page to the viewport */
-html, body {
-  height: 100vh;
-}
-
-/* Center the nav's header and list */
-nav {
+body {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
-/* navigation buttons have full width */
-nav button {
-  width: 100%;
+h1 {
+  font-size: 200%;
+  margin: 8px 0;
 }
 
-/* Remove unnecessary space and bullets from the lists */
-ul {
-  padding: 0px;
-  margin: 16px;
-  list-style-type: none;
-}
-
-/* Task 2.1. Lay out the childs of the 'body' using Grid Template Areas. */
-
-
-/* Task 3.1. Make the header element a flex container and center its children
-   vertically and horizontally.
- */
-
-
-/* Task 3.2. Make the list items of the unordered list in the nav element a flex container, 
-   use column direction and center the child items
- */
-
-/* Task 3.3. Make the main element a Flexbox container */
-
-
-/* Task 3.4. Make the footer's ul a Flexbox container */
-
-
-/* From here on styling from exercise 1 */
-img {
-  border-radius: 12px;
+h2 {
+  font-weight: bold;
+  margin: 10px 5px;
 }
 
 article {
-  background-color: lightgray;
-  border-radius: 16px;
-  padding: 16px;
-  width: 384px;
-  margin: 8px;
+  background-color: black;
+  color: white;
+  margin: 30px 20px;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 300px;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
 }
 
-a {
-  color: beige;
+article:hover {
+  background: rgb(62, 62, 62);
+  color: white;
 }
 
-span {
-  margin-right: 4px;
+article:hover img{
+  transform: scale(1.02);
+}
+
+img {
+  border-radius: 10px;
+  margin: 20px auto 30px;
+  max-width: 260px;
+  box-shadow: 10px 10px 20px 0 rgba(153, 153, 153, 0.353);
+  transition: all 0.2s ease;
+}
+
+span.btn {
+  background-color: rgb(196, 161, 35);
+  margin-right: 5px;
+  box-shadow: 5px 5px 10px 1px rgba(255, 255, 255, 0.092);
+}
+span.btn:hover {
+  cursor: default;
+  transform: scale(1);
 }
 
 .genre {
   padding: 4px 8px;
-  border: solid black 1px;
+  border: 1px solid rgb(11, 11, 11);
   border-radius: 6px;
   background-color: darkgray;
   font-weight: bold;
+}
+
+.genres {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 5px;
+}
+
+.description {
+  text-align: justify;
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.btnEdit {
+  font-weight: bold;
+}
+
+@media (min-width: 1080px) {
+  body {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+}
+
+article:hover .btnEdit {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  75% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
