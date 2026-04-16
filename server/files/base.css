@@ -1,6 +1,7 @@
 body {
   font-family: "Trebuchet MS", sans-serif;
-  background-color: seashell;
+  background-color: rgb(62, 43, 55);
+  color: white;
 }
 
 button {
@@ -25,4 +26,8 @@ button {
 .btn:hover {
   background-color: rgb(196, 161, 35);
   transform: scale(1.05);
+}
+
+li{
+  list-style: none;
 }

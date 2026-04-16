@@ -138,50 +138,54 @@ window.onload = function () {
 
   xhr.onload = function () {
     const navElement = document.querySelector("nav > ul");
-  
+
     if (xhr.status === 200) {
       const genres = JSON.parse(xhr.responseText);
-  
+
       // clear nav
       navElement.innerHTML = "";
-  
+
       // All button
       const allButton = document.createElement("button");
       allButton.textContent = "All";
+      allButton.classList.add("btn");
       allButton.addEventListener("click", function () {
         loadMovies();
       });
-  
+
       const allLi = document.createElement("li");
       allLi.appendChild(allButton);
       navElement.appendChild(allLi);
-  
+
       // genre buttons
       for (const genre of genres) {
         const button = document.createElement("button");
         button.textContent = genre;
-  
+        button.classList.add("btn");
+
         button.addEventListener("click", function () {
           loadMovies(genre);
         });
-  
+
         const li = document.createElement("li");
         li.appendChild(button);
         navElement.appendChild(li);
       }
-  
+
       // automatically load all movies
       const firstButton = document.querySelector("nav button");
       if (firstButton) {
         firstButton.click();
       }
     } else {
-      document.querySelector("body").append(
-        "Daten konnten nicht geladen werden, Status " +
-          xhr.status +
-          " - " +
-          xhr.statusText
-      );
+      document
+        .querySelector("body")
+        .append(
+          "Daten konnten nicht geladen werden, Status " +
+            xhr.status +
+            " - " +
+            xhr.statusText
+        );
     }
   };
 
