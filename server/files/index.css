@@ -1,11 +1,49 @@
 @import url(base.css);
 
 body {
+  display: grid;
+  margin: 0;
+  min-height: 100vh;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+
+  grid-template-areas:
+    "h"
+    "n"
+    "m"
+    "f";
+}
+
+@media (min-width: 900px) {
+  body {
+    grid-template-columns: minmax(192px, 256px) 1fr;
+    grid-template-rows: minmax(64px, 128px) 1fr minmax(64px, 128px);
+
+    grid-template-areas:
+      "h h"
+      "n m"
+      "f f";
+  }
+}
+
+header {
+  grid-area: h;
+}
+
+nav {
+  grid-area: n;
+}
+
+main {
+  grid-area: m;
+  overflow-y: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+}
+
+footer {
+  grid-area: f;
 }
 
 h1 {
@@ -34,7 +72,7 @@ article:hover {
   color: white;
 }
 
-article:hover img{
+article:hover img {
   transform: scale(1.02);
 }
 
@@ -51,6 +89,7 @@ span.btn {
   margin-right: 5px;
   box-shadow: 5px 5px 10px 1px rgba(255, 255, 255, 0.092);
 }
+
 span.btn:hover {
   cursor: default;
   transform: scale(1);
@@ -85,15 +124,6 @@ span.btn:hover {
 
 .btnEdit {
   font-weight: bold;
-}
-
-@media (min-width: 1080px) {
-  body {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-  }
 }
 
 article:hover .btnEdit {
