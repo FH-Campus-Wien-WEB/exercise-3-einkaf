@@ -75,6 +75,10 @@ nav button {
   box-sizing: border-box;
 }
 
+nav button.btn{
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
 nav button:hover {
   background-color: orange;
 }
@@ -202,3 +206,4 @@ article:hover .btnEdit {
     transform: translateY(0);
   }
 }
+
